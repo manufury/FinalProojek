@@ -25,7 +25,7 @@ export const NavigationBar = () => (
             <Nav.Link href="/Provinsi">Provinsi</Nav.Link>
             <Nav.Link href="/Global">Global</Nav.Link>
             <Nav.Link> - </Nav.Link>
-            <Nav.Link href="/Login">Logout</Nav.Link>
+            <Nav.Link href="/">Logout</Nav.Link>
             </Nav>
         </Navbar.Collapse>
     </Navbar>

@@ -54,8 +54,6 @@ export const Provinsi = () => {
                     console.log(error.message)
                 } else {
                     console.log('Success');
-                    clearInput();
-                    setIdProvinsi('');
                 }
             });
         }
@@ -66,10 +64,11 @@ export const Provinsi = () => {
                     console.log(error.message)
                 } else {
                     console.log('Success');
-                    clearInput();
                 }
             });
         }
+
+        clearInput();
     }
 
     const update = (item) => {
@@ -87,6 +86,7 @@ export const Provinsi = () => {
     }
 
     const clearInput = () => {
+        setIdProvinsi('');
         setProvinsi('');
         setPositif('');
         setSembuh('');
@@ -124,7 +124,7 @@ export const Provinsi = () => {
                             <input
                                 className="form form-control"
                                 placeholder="provinsi"
-                                value={provinsi !== '' ? provinsi : data.provinsi}
+                                value={provinsi}
                                 onChange={ (e) => setProvinsi(e.target.value) }
                             />
                         </td>
@@ -135,7 +135,7 @@ export const Provinsi = () => {
                             <input
                                 className="form form-control"
                                 placeholder="Positif"
-                                value={positif !== '' ? positif : data.positif}
+                                value={positif}
                                 onChange={ (e) => setPositif(e.target.value) }
                             />
                         </td>
@@ -146,7 +146,7 @@ export const Provinsi = () => {
                             <input
                                 className="form form-control"
                                 placeholder="Sembuh"
-                                value={sembuh !== '' ? sembuh : data.sembuh}
+                                value={sembuh}
                                 onChange={ (e) => setSembuh(e.target.value) }
                             />
                         </td>
@@ -157,7 +157,7 @@ export const Provinsi = () => {
                             <input
                                 className="form form-control"
                                 placeholder="Meninggal"
-                                value={meninggal !== '' ? meninggal : data.meninggal}
+                                value={meninggal}
                                 onChange={ (e) => setMeninggal(e.target.value) }
                             />
                         </td>
@@ -168,7 +168,7 @@ export const Provinsi = () => {
                             <input
                                 className="form form-control"
                                 placeholder="Dirawat"
-                                value={rawat !== '' ? rawat : data.rawat}
+                                value={rawat}
                                 onChange={ (e) => setRawat(e.target.value) }
                             />    
                         </td>
@@ -176,7 +176,7 @@ export const Provinsi = () => {
                     <tr>
                         <td></td>
                         <td>
-                            <Button variant="primary" onClick={onSubmit}>Update</Button>
+                            <Button variant="primary" onClick={onSubmit}>{idprovinsi !== '' ? 'Update' : 'Add'}</Button>
                         </td>
                     </tr>
                 </Table>

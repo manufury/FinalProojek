@@ -20,7 +20,7 @@ export const Login = () => {
 
     if(logedin)
     {
-        return <Redirect to="/" />
+        return <Redirect to="/dashboard" />
     }
 
     return (
